@@ -1,5 +1,5 @@
 {% set name = "llamaindex-py-client" %}
-{% set version = "0.1.17" %}
+{% set version = "0.1.18" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/llamaindex_py_client-{{ version }}.tar.gz
-  sha256: cbfa65006abe248a6c17bfb3703f884d1d395c3609583ff60783b43ab5f7b0d6
+  sha256: 091ee49a92592e3894777ade12516c2137093f9d6441a549f406461917ce9b7e
 
 build:
   noarch: python
