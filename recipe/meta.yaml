@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/llamaindex_py_client-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/llamaindex_py_client-{{ version }}.tar.gz
   sha256: 73f74792bb8c092bae6dc626627a09ac13a099fa8d10f8fcc83e17a2b332cca7
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8,<4.0
+    - python {{ python_min }}
     - poetry-core
     - pip
   run:
-    - python >=3.8.0,<4.0.0
+    - python >={{ python_min }},<4.0.0
     - pydantic >=1.10
     - httpx >=0.20.0
 
@@ -31,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://llamaindex.ai
